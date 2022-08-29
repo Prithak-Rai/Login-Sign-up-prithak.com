@@ -1,0 +1,28 @@
+type="submit"
+
+
+function saveData()
+{
+let signupUsername,email,password,passwordc;
+signupUsername=document.getElementById("signupUsername").value;
+email=document.getElementById("email").value;
+password=document.getElementById("password").value;
+passwordc=document.getElementById("passwordc").value;
+
+let user_records=new Array();
+user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+if(user_records.some((v)=>{return v.email==email}))
+{
+  alert("duplicate data");
+}
+else
+{
+  user_records.push({
+  "signupUsername":signupUsername,
+  "email":email,
+  "password":password,
+  "passwordc":passwordc
+})
+localStorage.setItem("users",JSON.stringify(user_records));
+}
+}
