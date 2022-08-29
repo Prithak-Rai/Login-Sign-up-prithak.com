@@ -134,7 +134,7 @@ body {
     text-decoration: underline;
 }
 .form__image{
-    padding-left: 11%;
+    justify-content: center;
     height:300px;
     width:300px;
 }
